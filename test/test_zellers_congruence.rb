@@ -7,7 +7,7 @@ class TestZellersCongruence < MiniTest::Unit::TestCase
   end
 
   def test_zellers_congruence_output
-    year = ZellersCongruence.calculate("12", "2013")
-    assert_equal(year, "Calendar Date is 12 2013")
+    day = ZellersCongruence.calculate("12", "2013")
+    assert_equal(day, "Sunday")
   end
 end
