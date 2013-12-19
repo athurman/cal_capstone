@@ -3,13 +3,15 @@ class ZellersCongruence
     days_of_the_week = {0 => "Saturday", 1 => "Sunday", 2 => "Monday",
                         3 => "Tuesday", 4 => "Wednesday", 5 => "Thursday",
                         6 => "Friday"}
-    months_of_the_year = {"January" => 1, "February" => 2, "March" => 3,
+    months_of_the_year = {"January" => 13, "February" => 14, "March" => 3,
                           "April" => 4, "May" => 5, "June" => 6,
                           "July" => 7, "August" => 8, "September" => 9,
                           "October" => 10, "November" => 11, "December" => 12}
 
     month = months_of_the_year[month.capitalize.strip] if month.size > 2 && !month.include?(".")
-
+    month = months_of_the_year["February"] if month == "2" || month == "02"
+    month = months_of_the_year["January"] if month == "1" || month == "01"
+    year = year.to_i - 1 if month == 13 || month == 14
     month, year = month.to_i, year.to_i
 
     day = 1
