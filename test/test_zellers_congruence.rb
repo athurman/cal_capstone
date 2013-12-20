@@ -8,32 +8,43 @@ class TestZellersCongruence < MiniTest::Unit::TestCase
 
   def test_zellers_congruence_output
     first_day_of_december_2013 = ZellersCongruence.calculate("12", "2013")
-    assert_equal(first_day_of_december_2013, "Sunday")
+    assert_equal("Sunday", first_day_of_december_2013)
   end
 
   def test_zellers_congruence_output_with_decimal_input_test_floor
     first_day_of_march_2012 = ZellersCongruence.calculate("3.9", "2012.34")
-    assert_equal(first_day_of_march_2012, "Thursday")
+    assert_equal("Thursday", first_day_of_march_2012)
   end
 
   def test_user_input_word_month
     first_day_of_december_2013 = ZellersCongruence.calculate("December", "2013")
-    assert_equal(first_day_of_december_2013, "Sunday")
+    assert_equal("Sunday", first_day_of_december_2013)
   end
 
   def test_user_input_crazy_word_for_month
     first_day_of_december_2013 = ZellersCongruence.calculate("dEcEmBer     ", "2013")
-    assert_equal(first_day_of_december_2013, "Sunday")
+    assert_equal("Sunday", first_day_of_december_2013)
   end
 
   def test_january_first_day_of_month
     first_day_of_january_2012 = ZellersCongruence.calculate("January", "2012")
-    assert_equal(first_day_of_january_2012, "Sunday")
+    assert_equal("Sunday", first_day_of_january_2012)
   end
 
   def test_february_first_day_of_month
     first_day_of_feb_2012 = ZellersCongruence.calculate("2", "2012")
-    assert_equal(first_day_of_feb_2012, "Wednesday")
+    assert_equal("Wednesday", first_day_of_feb_2012)
+  end
+
+  def test_march_after_leap_year
+    first_day_of_march_2008 = ZellersCongruence.calculate("March", "2008")
+    assert_equal("Saturday", first_day_of_march_2008)
+  end
+
+  def test_year_out_of_range
+    assert_raises RangeError do
+      ZellersCongruence.calculate("March", "1785")
+    end
   end
 
 end
