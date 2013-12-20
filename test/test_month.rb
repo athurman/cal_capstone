@@ -8,8 +8,8 @@ class TestMonthClass < MiniTest::Unit::TestCase
   end
 
   def test_leap_year_true_false
-    feb = Month.new
-
+    feb = Month.new(2, 2012)
+    assert_equal(true, feb.is_leapyear?)
   end
 end
 

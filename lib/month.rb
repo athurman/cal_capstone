@@ -14,12 +14,25 @@ class Month
     end
   end
 
+  def is_leapyear?
+    if @year % 100 == 0 && @year % 4 == 0
+      @year % 400 == 0
+    elsif !(@year % 100 == 0) && !(@year % 400 == 0)
+      @year % 4 == 0
+    end
+  end
+
   def format_days_in_month month, month_array
     amt_of_days_in_months = {1 => 31, 2 => 28, 3 => 31, 4 => 30,
                            5 => 31, 6 => 30, 7 => 31, 8 => 31,
                            9 => 30, 10 => 31, 11 => 30, 12 => 31}
+    if self.is_leapyear? && month == 2
+      days_in_month = 29
+    else
+      days_in_month = amt_of_days_in_months[month]
+    end
     i = 1
-    while i <= amt_of_days_in_months[month]
+    while i <= days_in_month
       if i < 10
         space = " "
       else
@@ -57,6 +70,7 @@ class Month
     puts "Su Mo Tu We Th Fr Sa"
     puts month_string
   end
+
 end
 
 # Raise NameError if month name is not included in Hash
