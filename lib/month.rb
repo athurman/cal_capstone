@@ -71,9 +71,7 @@ class Month
     puts "#{month_names[@month]} #{@year}".center(20).rstrip
     puts "Su Mo Tu We Th Fr Sa"
     puts month_string
-    if month_array.length < 40
-      puts
-    end
+    puts "\n" if month_array.length < 40
   end
 
 end
