@@ -9,7 +9,7 @@ class Month
     month_names = {1 => "January", 2 => "February", 3 => "March", 4 => "April",
                    5 => "May", 6 => "June", 7 => "July", 8 => "August",
                    9 => "September", 10 => "October", 11 => "November", 12 => "December"}
-    amt_of_days_in_week = 7
+    amt_of_days_in_a_week = 7
 
     month_array = []
     i = 1
@@ -24,7 +24,7 @@ class Month
       i += 1
     end
 
-    j = 7
+    j = amt_of_days_in_a_week
     while j < month_array.length
       month_array.insert(j, "\n")
       j += 8
