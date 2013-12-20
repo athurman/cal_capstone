@@ -32,14 +32,18 @@ class Month
 
     j = amt_of_days_in_a_week
     while j < month_array.length
+      month_array[j -1] = month_array[j -1].rstrip
       month_array.insert(j, "\n")
       j += 8
     end
-
-    puts "#{month_names[month]} #{year}".center(20)
+    month_array[month_array.length - 1] = month_array[month_array.length - 1].rstrip
+    month_days = month_array.join
+    puts "#{month_names[month]} #{year}".center(20).rstrip
     puts "Su Mo Tu We Th Fr Sa"
-    puts month_array.join
+    puts month_days
   end
 end
+
+# Convert from class method to numerous instance methods
 
 # Raise NameError if month name is not included in Hash
