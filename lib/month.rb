@@ -9,8 +9,30 @@ class Month
     month_names = {1 => "January", 2 => "February", 3 => "March", 4 => "April",
                    5 => "May", 6 => "June", 7 => "July", 8 => "August",
                    9 => "September", 10 => "October", 11 => "November", 12 => "December"}
-    puts "#{month_names[month]} #{year}".center(20).sub(/\s+\Z/, "")
+    amt_of_days_in_week = 7
+
+    month_array = []
+    i = 1
+    while i <= amt_of_days_in_months[month]
+      if i < 10
+        space = " "
+      else
+        space = ""
+      end
+      day = space + i.to_s + " "
+      month_array.push(day)
+      i += 1
+    end
+
+    j = 7
+    while j < month_array.length
+      month_array.insert(j, "\n")
+      j += 8
+    end
+
+    puts "#{month_names[month]} #{year}".center(20)
     puts "Su Mo Tu We Th Fr Sa"
+    puts month_array.join
   end
 end
 
