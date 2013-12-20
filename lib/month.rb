@@ -63,12 +63,17 @@ class Month
     month_array = []
     format_first_day(first_day_of_the_month, month_array)
     format_days_in_month(@month, month_array)
-    insert_week_line_breaks(month_array)
     month_array[month_array.length - 1] = month_array[month_array.length - 1].rstrip
+    insert_week_line_breaks(month_array)
+
     month_string = month_array.join
+
     puts "#{month_names[@month]} #{@year}".center(20).rstrip
     puts "Su Mo Tu We Th Fr Sa"
     puts month_string
+    if month_array.length < 40
+      puts
+    end
   end
 
 end
