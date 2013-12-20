@@ -10,8 +10,14 @@ class Month
                    5 => "May", 6 => "June", 7 => "July", 8 => "August",
                    9 => "September", 10 => "October", 11 => "November", 12 => "December"}
     amt_of_days_in_a_week = 7
-
+    first_day_of_the_month = ZellersCongruence.calculate(month, year)
     month_array = []
+
+    first_day_of_the_month.times do |x|
+      x = "   "
+      month_array.push(x)
+    end
+
     i = 1
     while i <= amt_of_days_in_months[month]
       if i < 10
