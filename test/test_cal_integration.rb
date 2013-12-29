@@ -25,6 +25,15 @@ class TestCheersIntegration < MiniTest::Unit::TestCase
   assert_equal expected_output, shell_output
   end
 
+  def test_year_input
+    shell_output = `ruby cal.rb 2012`
+    expected_output = <<EOS
+                             2012
+
+EOS
+  assert_equal expected_output, shell_output
+  end
+
 end
 
 # 1  2  3  4  5  6  7

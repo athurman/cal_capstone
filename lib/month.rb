@@ -1,11 +1,8 @@
 require_relative 'zellers_congruence'
 
 class Month
-
-  def initialize month, year
-    @month = month
-    @year = year
-  end
+  attr_reader :month_array
+  attr_reader :month_string
 
   def format_first_day first_day, month_array
     first_day.times do |x|
@@ -55,23 +52,27 @@ class Month
     end
   end
 
-  def print
-    month_names = {1 => "January", 2 => "February", 3 => "March", 4 => "April",
-                 5 => "May", 6 => "June", 7 => "July", 8 => "August",
-                 9 => "September", 10 => "October", 11 => "November", 12 => "December"}
+  def initialize month, year
+    @month = month
+    @year = year
     first_day_of_the_month = ZellersCongruence.calculate(@month, @year)
     month_array = []
     format_first_day(first_day_of_the_month, month_array)
     format_days_in_month(@month, month_array)
     month_array[month_array.length - 1] = month_array[month_array.length - 1].rstrip
     insert_week_line_breaks(month_array)
+    @month_array = month_array
+    @month_string = @month_array.join
+  end
 
-    month_string = month_array.join
-
+  def print
+    month_names = {1 => "January", 2 => "February", 3 => "March", 4 => "April",
+                 5 => "May", 6 => "June", 7 => "July", 8 => "August",
+                 9 => "September", 10 => "October", 11 => "November", 12 => "December"}
     puts "#{month_names[@month]} #{@year}".center(20).rstrip
     puts "Su Mo Tu We Th Fr Sa"
-    puts month_string
-    puts "\n" if month_array.length < 40
+    puts @month_string
+    puts "\n" if @month_array.length < 40
   end
 
 end
