@@ -1,7 +1,15 @@
 require_relative 'lib/month'
 
-month = ARGV[0].to_i
-year = ARGV[1].to_i
+if ARGV[0].size == 4
+  year == ARGV[0].to_i
+else
+  month = ARGV[0].to_i
+  year = ARGV[1].to_i
+end
 
-printed_month = Month.new(month, year)
-printed_month.print
+if month.nil?
+  printed_year
+else
+  printed_month = Month.new(month, year)
+  printed_month.print
+end
