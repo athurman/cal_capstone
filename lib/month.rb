@@ -4,18 +4,20 @@ class Month
   attr_reader :month_array
   attr_reader :month_string
 
-  def format_first_day first_day, month_array
-    first_day.times do |x|
-      x = "   "
-      month_array.push(x)
-    end
-  end
+
 
   def is_leapyear?
     if @year % 100 == 0 && @year % 4 == 0
       @year % 400 == 0
     elsif !(@year % 100 == 0) && !(@year % 400 == 0)
       @year % 4 == 0
+    end
+  end
+
+  def format_first_day first_day, month_array
+    first_day.times do |x|
+      x = "   "
+      month_array.push(x)
     end
   end
 
