@@ -1,7 +1,10 @@
 require_relative 'lib/month'
 require_relative 'lib/year'
 
-if ARGV[0].size == 4
+raise ArgumentError if ARGV.length == 0
+raise ArgumentError if ARGV.length > 2
+
+if ARGV[0].size == 4 && ARGV.length == 1
   year = ARGV[0].to_i
 else
   month = ARGV[0].to_i

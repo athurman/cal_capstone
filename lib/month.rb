@@ -1,10 +1,7 @@
 require_relative 'zellers_congruence'
 
 class Month
-  attr_reader :month_array
   attr_reader :month_string
-
-
 
   def is_leapyear?
     if @year % 100 == 0 && @year % 4 == 0
@@ -76,7 +73,4 @@ class Month
     puts @month_string
     puts "\n" if @month_array.length < 40
   end
-
 end
-
-# Raise NameError if month name is not included in Hash

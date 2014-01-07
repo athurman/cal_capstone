@@ -42,54 +42,52 @@ class Year
   end
 
   def print
-    ary1 = create_month_array(1)
-    ary2 = create_month_array(2)
-    ary3 = create_month_array(3)
-    ary4 = create_month_array(4)
-    ary5 = create_month_array(5)
-    ary6 = create_month_array(6)
-    ary7 = create_month_array(7)
-    ary8 = create_month_array(8)
-    ary9 = create_month_array(9)
-    ary10 = create_month_array(10)
-    ary11 = create_month_array(11)
-    ary12 = create_month_array(12)
+    january_ary = create_month_array(1)
+    february_ary = create_month_array(2)
+    march_ary = create_month_array(3)
+    april_ary = create_month_array(4)
+    may_ary = create_month_array(5)
+    june_ary = create_month_array(6)
+    july_ary = create_month_array(7)
+    august_ary = create_month_array(8)
+    september_ary = create_month_array(9)
+    october_ary = create_month_array(10)
+    november_ary = create_month_array(11)
+    december_ary = create_month_array(12)
 
     puts "#{@year}".center(62).rstrip
     puts
-    puts ary1[0] + "  " + ary2[0] + "  " + ary3[0].rstrip
-    puts ary1[1] + "  " + ary2[1] + "  " + ary3[1].rstrip
-    puts ary1[2] + "  " + ary2[2] + "  " + ary3[2].rstrip
-    puts ary1[3] + "  " + ary2[3] + "  " + ary3[3].rstrip
-    puts ary1[4] + "  " + ary2[4] + "  " + ary3[4].rstrip
-    puts ary1[5] + "  " + ary2[5] + "  " + ary3[5].rstrip
-    puts ary1[6] + "  " + ary2[6] + "  " + ary3[6].rstrip
-    puts ary1[7] + "  " + ary2[7] + "  " + ary3[7].rstrip
-    puts ary4[0] + "  " + ary5[0] + "  " + ary6[0].rstrip
-    puts ary4[1] + "  " + ary5[1] + "  " + ary6[1].rstrip
-    puts ary4[2] + "  " + ary5[2] + "  " + ary6[2].rstrip
-    puts ary4[3] + "  " + ary5[3] + "  " + ary6[3].rstrip
-    puts ary4[4] + "  " + ary5[4] + "  " + ary6[4].rstrip
-    puts ary4[5] + "  " + ary5[5] + "  " + ary6[5].rstrip
-    puts ary4[6] + "  " + ary5[6] + "  " + ary6[6].rstrip
-    puts ary4[7] + "  " + ary5[7] + "  " + ary6[7].rstrip
-    puts ary7[0] + "  " + ary8[0] + "  " + ary9[0].rstrip
-    puts ary7[1] + "  " + ary8[1] + "  " + ary9[1].rstrip
-    puts ary7[2] + "  " + ary8[2] + "  " + ary9[2].rstrip
-    puts ary7[3] + "  " + ary8[3] + "  " + ary9[3].rstrip
-    puts ary7[4] + "  " + ary8[4] + "  " + ary9[4].rstrip
-    puts ary7[5] + "  " + ary8[5] + "  " + ary9[5].rstrip
-    puts ary7[6] + "  " + ary8[6] + "  " + ary9[6].rstrip
-    puts ary7[7] + "  " + ary8[7] + "  " + ary9[7].rstrip
-    puts ary10[0] + "  " + ary11[0] + "  " + ary12[0].rstrip
-    puts ary10[1] + "  " + ary11[1] + "  " + ary12[1].rstrip
-    puts ary10[2] + "  " + ary11[2] + "  " + ary12[2].rstrip
-    puts ary10[3] + "  " + ary11[3] + "  " + ary12[3].rstrip
-    puts ary10[4] + "  " + ary11[4] + "  " + ary12[4].rstrip
-    puts ary10[5] + "  " + ary11[5] + "  " + ary12[5].rstrip
-    puts ary10[6] + "  " + ary11[6] + "  " + ary12[6].rstrip
-    puts ary10[7] + "  " + ary11[7] + "  " + ary12[7].rstrip
+    puts january_ary[0] + "  " + february_ary[0] + "  " + march_ary[0].rstrip
+    puts january_ary[1] + "  " + february_ary[1] + "  " + march_ary[1].rstrip
+    puts january_ary[2] + "  " + february_ary[2] + "  " + march_ary[2].rstrip
+    puts january_ary[3] + "  " + february_ary[3] + "  " + march_ary[3].rstrip
+    puts january_ary[4] + "  " + february_ary[4] + "  " + march_ary[4].rstrip
+    puts january_ary[5] + "  " + february_ary[5] + "  " + march_ary[5].rstrip
+    puts january_ary[6] + "  " + february_ary[6] + "  " + march_ary[6].rstrip
+    puts january_ary[7] + "  " + february_ary[7] + "  " + march_ary[7].rstrip
+    puts april_ary[0] + "  " + may_ary[0] + "  " + june_ary[0].rstrip
+    puts april_ary[1] + "  " + may_ary[1] + "  " + june_ary[1].rstrip
+    puts april_ary[2] + "  " + may_ary[2] + "  " + june_ary[2].rstrip
+    puts april_ary[3] + "  " + may_ary[3] + "  " + june_ary[3].rstrip
+    puts april_ary[4] + "  " + may_ary[4] + "  " + june_ary[4].rstrip
+    puts april_ary[5] + "  " + may_ary[5] + "  " + june_ary[5].rstrip
+    puts april_ary[6] + "  " + may_ary[6] + "  " + june_ary[6].rstrip
+    puts april_ary[7] + "  " + may_ary[7] + "  " + june_ary[7].rstrip
+    puts july_ary[0] + "  " + august_ary[0] + "  " + september_ary[0].rstrip
+    puts july_ary[1] + "  " + august_ary[1] + "  " + september_ary[1].rstrip
+    puts july_ary[2] + "  " + august_ary[2] + "  " + september_ary[2].rstrip
+    puts july_ary[3] + "  " + august_ary[3] + "  " + september_ary[3].rstrip
+    puts july_ary[4] + "  " + august_ary[4] + "  " + september_ary[4].rstrip
+    puts july_ary[5] + "  " + august_ary[5] + "  " + september_ary[5].rstrip
+    puts july_ary[6] + "  " + august_ary[6] + "  " + september_ary[6].rstrip
+    puts july_ary[7] + "  " + august_ary[7] + "  " + september_ary[7].rstrip
+    puts october_ary[0] + "  " + november_ary[0] + "  " + december_ary[0].rstrip
+    puts october_ary[1] + "  " + november_ary[1] + "  " + december_ary[1].rstrip
+    puts october_ary[2] + "  " + november_ary[2] + "  " + december_ary[2].rstrip
+    puts october_ary[3] + "  " + november_ary[3] + "  " + december_ary[3].rstrip
+    puts october_ary[4] + "  " + november_ary[4] + "  " + december_ary[4].rstrip
+    puts october_ary[5] + "  " + november_ary[5] + "  " + december_ary[5].rstrip
+    puts october_ary[6] + "  " + november_ary[6] + "  " + december_ary[6].rstrip
+    puts october_ary[7] + "  " + november_ary[7] + "  " + december_ary[7].rstrip
   end
 end
-
-# Each month is its own array and each line of the month is its own array index!!
