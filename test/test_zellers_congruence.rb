@@ -36,13 +36,4 @@ class TestZellersCongruence < MiniTest::Unit::TestCase
     assert_equal(6, first_day_of_march_2008)
   end
 
-  def test_year_out_of_range
-    assert_raises RangeError do
-      ZellersCongruence.calculate(3, 1785)
-    end
-    assert_raises RangeError do
-      ZellersCongruence.calculate(3, 3003)
-    end
-  end
-
 end

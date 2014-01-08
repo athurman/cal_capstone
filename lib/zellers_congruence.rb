@@ -1,6 +1,5 @@
 class ZellersCongruence
   def self.calculate month, year
-    raise RangeError if year.to_i >= 3000 || year.to_i < 1800
     month, year = month.to_i, year.to_i
     month = 13 if month == 1
     month = 14 if month == 2
