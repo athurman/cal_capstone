@@ -72,6 +72,6 @@ class Month
     puts "Su Mo Tu We Th Fr Sa"
     puts @month_string
     puts "\n" if @month_array.length < 40
-    puts "\n" if @month == 2 && @month_array.length == 31
+    puts "\n" if @month_array.length == 31
   end
 end
