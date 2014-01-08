@@ -115,4 +115,10 @@ class TestCheersIntegration < MiniTest::Unit::TestCase
   assert_equal expected_output, shell_output
   end
 
+  def test_no_inputs_given
+    shell_output = `ruby cal.rb`
+    expected_output = `cal`
+  assert_equal expected_output, shell_output
+  end
+
 end
