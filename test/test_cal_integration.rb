@@ -7,9 +7,33 @@ class TestCheersIntegration < MiniTest::Unit::TestCase
   assert_equal expected_output, shell_output
   end
 
+  def test_month_with_first_day_starting_on_leap_year
+      shell_output = `ruby cal.rb 2 2012`
+      expected_output = `cal 2 2012`
+  assert_equal expected_output, shell_output
+  end
+
   def test_month_with_first_day_starting_friday_with_6_lines
       shell_output = `ruby cal.rb 3 2013`
       expected_output = `cal 3 2013`
+  assert_equal expected_output, shell_output
+  end
+
+  def test_month_with_first_day_starting_friday_with_6_lines_2
+      shell_output = `ruby cal.rb 9 2012`
+      expected_output = `cal 9 2012`
+  assert_equal expected_output, shell_output
+  end
+
+  def test_month_with_4_lines
+      shell_output = `ruby cal.rb 02 2015`
+      expected_output = `cal 02 2015`
+  assert_equal expected_output, shell_output
+  end
+
+  def test_month_with_non_leap_year
+      shell_output = `ruby cal.rb 02 1900`
+      expected_output = `cal 02 1900`
   assert_equal expected_output, shell_output
   end
 
@@ -22,6 +46,12 @@ class TestCheersIntegration < MiniTest::Unit::TestCase
   def test_leap_year_logic
     shell_output = `ruby cal.rb 2 1900`
     expected_output = `cal 2 1900`
+  assert_equal expected_output, shell_output
+  end
+
+  def test_leap_year_logic_2
+    shell_output = `ruby cal.rb 02 2000`
+    expected_output = `cal 02 2000`
   assert_equal expected_output, shell_output
   end
 
@@ -72,4 +102,11 @@ class TestCheersIntegration < MiniTest::Unit::TestCase
     expected_output = `cal 2999`
   assert_equal expected_output, shell_output
   end
+
+  def test_year_input_compare_to_cal_2735
+    shell_output = `ruby cal.rb 2735`
+    expected_output = `cal 2735`
+  assert_equal expected_output, shell_output
+  end
+
 end
