@@ -17,18 +17,30 @@ class Year
     ary.insert(0, month_names[month].center(20))
     ary.insert(1, "Su Mo Tu We Th Fr Sa")
     if ary.length < 8
-      last_week = ary[6]
+      if ary.length == 6
+        last_week = ary[5]
+      else
+        last_week = ary[6]
+      end
       until last_week.size == 20 do
         x = "   "
         last_week = last_week + x
       end
-      ary[6].replace(last_week)
+      if ary.length == 6
+        ary[5].replace(last_week)
+      elsif ary.length == 7
+        ary[6].replace(last_week)
+      end
+
       end_of_month = "  "
       until end_of_month.size == 20 do
         x = "  "
         end_of_month = end_of_month + x
       end
       ary.push(end_of_month)
+      if ary.length == 7
+        ary.push(end_of_month)
+      end
     else
       last_week = ary[7]
       until last_week.size == 20 do

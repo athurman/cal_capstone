@@ -103,6 +103,12 @@ class TestCheersIntegration < MiniTest::Unit::TestCase
   assert_equal expected_output, shell_output
   end
 
+  def test_year_with_4_line_month
+    shell_output = `ruby cal.rb 2015`
+    expected_output = `cal 2015`
+  assert_equal expected_output, shell_output
+  end
+
   def test_year_input_compare_to_cal_2735
     shell_output = `ruby cal.rb 2735`
     expected_output = `cal 2735`
