@@ -38,13 +38,14 @@ class Year
   end
 
   def print
+    total_num_month_rows = 8
     puts "#{@year}".center(62).rstrip
     puts
     all_months = (1..12).each_with_object([]) do |month, year|
       year << create_month_array(month)
     end
     all_months.each_slice(3) do |quarter|
-      8.times do |i|
+      total_num_month_rows.times do |i|
         puts [quarter[0][i], quarter[1][i], quarter[2][i].rstrip].join("  ")
       end
     end

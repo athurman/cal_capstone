@@ -49,12 +49,11 @@ class Month
 
   def insert_week_line_breaks month_array
     amt_of_days_in_a_week = 7
-
-    j = amt_of_days_in_a_week
-    while j < month_array.length
-      month_array[j -1].rstrip!
-      month_array.insert(j, "\n")
-      j += 8
+    i = amt_of_days_in_a_week
+    while i < month_array.length
+      month_array[i -1].rstrip!
+      month_array.insert(i, "\n")
+      i += 8
     end
     month_array
   end
